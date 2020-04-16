@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  has_many :events, foreign_key: 'creator_id'
-  has_many :invitations, foreign_key: 'attendee_id'
-  has_many :attended_events, through: :invitations, source: :attended_event
+  has_many :events, foreign_key: 'creator_id', dependent: :destroy
+  has_many :invitations, foreign_key: 'attendee_id', dependent: :destroy
+  has_many :attended_events, through: :invitations, source: :attended_event,
+            dependent: :destroy
   before_save :downcase_email
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
   has_secure_password

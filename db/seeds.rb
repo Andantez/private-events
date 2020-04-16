@@ -13,13 +13,23 @@ admin = User.create(username: 'ades', email: 'ades@gmail.com',
                     password: 'foobar', password_confirmation: 'foobar')
 
 30.times do
-  user = User.create(username: Faker::Name.male_first_name,
-                     email: Faker::Internet.email(name: Faker::Name.male_first_name),
-                     password: 'foobar', password_confirmation: 'foobar')
+  accepted_invitation = [true, false, nil].sample
+  user = User.create!(username: Faker::Name.male_first_name,
+                      email: Faker::Internet.email(name: Faker::Name.male_first_name),
+                      password: 'foobar', password_confirmation: 'foobar')
 
   20.times do
-    event = user.events.create(description: Faker::Marketing.buzzwords,
-                               title: Faker::Book.title, address: Faker::Address.street_address,
-                               date: Faker::Time.between(from: 1.year.ago, to: 1.year.from_now))
+    user.events.create!(description: Faker::Marketing.buzzwords,
+                        title: Faker::Book.title,
+                        address: Faker::Address.street_address,
+                        date: Faker::Time.between(from: 1.year.ago, to: 1.year.from_now))
+  end
+  sleep 2
+  User.all.each do |user_invite|
+    random_attendee = (1..30).to_a.sample
+    random_event = (1..30).to_a.sample
+    user_invite.invitations.create!(accepted: accepted_invitation,
+                                    attended_event_id: random_event,
+                                    attendee_id: random_attendee)
   end
 end

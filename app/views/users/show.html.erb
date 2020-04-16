@@ -7,3 +7,9 @@
     <li><%= event.date %></li>
   <% end %>
 </ul>
+
+<ol>
+  <% @user.invitations.each do |i| %>
+  <li><%= i.attended_event.title %></li>
+  <% end %>
+</ol>
