@@ -1,26 +1,26 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <%= link_to 'Private Events', root_path, class: 'navbar-brand' %>
+<nav class="navbar navbar-expand-lg navbar-light navigation">
+  <%= link_to 'Private Events', root_path, class: 'navbar-brand', id: 'logo' %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="ncurrent_usergler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <%= link_to 'Home', root_path, class: 'nav-link' %>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav navbar-buttons">
+      <li class="nav-item pr-5">
+        <%= link_to 'Home', root_path, class: 'nav-link nav-button' %>
       </li>
-      <li class="nav-item">
-        <%= link_to 'Events', events_path, class: 'nav-link' %>
+      <li class="nav-item pr-5">
+        <%= link_to 'Events', events_path, class: 'nav-link nav-button' %>
       </li>
-      <li class="nav-item">
-        <%= link_to 'Profile', current_user, class: 'nav-link' %>
+      <li class="nav-item pr-5">
+        <%= link_to 'Profile', current_user, class: 'nav-link nav-button' %>
       </li>
       <% if logged_in? %>
-        <li class="nav-item">
-          <%= link_to 'Log Out', logout_path, class: 'nav-link', method: :delete %>
+        <li class="nav-item pr-5">
+          <%= link_to 'Log Out', logout_path, class: 'nav-link nav-button', method: :delete %>
         </li>
       <% else %>
-        <li class="nav-item">
-          <%= link_to 'Log in', login_path, class: 'nav-link' %>
+        <li class="nav-item pr-5">
+          <%= link_to 'Log in', login_path, class: 'nav-link nav-button' %>
         </li>
       <% end %>
     </ul>

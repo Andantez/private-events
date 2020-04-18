@@ -1,15 +1,11 @@
-<h1><%= @user.username %></h1>
-<ul>
-  <% @user.events.each do |event| %>
-    <li><%= event.title %></li>
-    <li><%= event.description %></li>
-    <li><%= event.address %></li>
-    <li><%= event.date %></li>
-  <% end %>
-</ul>
 
-<ol>
-  <% @user.invitations.each do |i| %>
-  <li><%= i.attended_event.title %></li>
-  <% end %>
-</ol>
+ 
+ <div class="links test">
+  <div class="links">  <%= link_to 'Upcomming Events', user_path(upcomming_events: 'events'),class: "event-link" %></div>
+   <div class="links"><%= link_to 'Past Events', user_path(past_events: "events"), class: 'event-link' %></div>
+ </div>
+<% if params[:upcomming_events].present? %>
+  <%= render 'upcomming' %>
+<% elsif params[:past_events].present? %>
+  <%= render 'past' %>
+<% end %>

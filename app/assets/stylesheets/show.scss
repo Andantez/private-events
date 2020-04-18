@@ -1,0 +1,100 @@
+@import "fonts";
+@import 'colors';
+
+.links {
+  text-align: center;
+  width: 400px;
+  margin: 15px auto;
+
+}
+
+.event-link {
+  color: $blue;
+  font-size: 1.3rem;
+  font-family: $text-font;
+  border-radius: 5px;
+  
+  letter-spacing: 1px;
+  &:hover {
+    text-decoration: none;
+    font-weight: bold;
+    color: $blue;
+  }
+}
+
+.test {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+// .main-container {
+//   width: 800px;
+//   margin: 0px auto;
+// }
+.card-container {
+  // border: 3px solid black;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 700px;
+  margin: 0px auto;
+  flex-wrap: wrap;
+  height: 100%;
+  height: auto;
+}
+
+.event-card {
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
+  font-family: $text-font;
+  padding: 30px;
+  font-size: 1.2rem;
+}
+
+.heading {
+  margin: 25px;
+  text-align: center;
+  font-family: $title-font;
+  color: $blue;
+  // font-weight: normal;
+}
+
+.event-links-container {
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+  
+  
+}
+
+.title {
+  font-family: $title-font;
+
+}
+
+.event-title {
+  color: $blue;
+  &:hover {
+    text-decoration: none;
+    font-weight: bold;
+    color: $grey;
+  }
+}
+.show-list {
+  list-style: none;
+  font-family: $text-font;
+  font-size: 1.3rem;
+}
+
+.show-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.show-list-container {
+  width: 50%;
+  text-align: center;
+  border: 3px solid black;
+  margin: 0px auto;
+}

@@ -1,0 +1,37 @@
+@import "fonts";
+
+.navigation {
+  background-color: #F1F2EE;
+  border-bottom: 3px solid #263950;
+  margin-bottom: 30px;
+}
+
+.navbar-buttons {
+  font-family: $title-font;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px #F1F2EE;
+}
+
+#logo {
+  font-family: $title-font;
+  font-size: 2rem;
+  color: #263950;
+  text-shadow: 1px 1px #F1F2EE;
+  border-left: 3px solid #263950;
+  border-right: 3px solid #263950;
+  border-top-left-radius: 30%;
+  border-top-right-radius: 30%;
+  border-bottom-left-radius: 30%;
+  border-bottom-right-radius: 30%;
+  padding: 8px;
+}
+
+.nav-button {
+  color: #263950 !important;
+  border-left: 3px solid #263950;
+  border-right: 3px solid #263950;
+  border-top-left-radius: 30%;
+  border-top-right-radius: 30%;
+  border-bottom-left-radius: 30%;
+  border-bottom-right-radius: 30%;
+}

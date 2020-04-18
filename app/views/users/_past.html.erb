@@ -1,20 +1,19 @@
-<% if current_user.events.upcomming_events.any? %>
+<% if current_user.events.past_events.any? %>
 <div class="main-container">
   
-      <h2 class="heading">All Events</h2>
+      <h2 class="heading">Past events</h2>
     <div class="pagination justify-content-center m-3">
-      <%= will_paginate @events, class: "testing" %>
+      <%= will_paginate @past_pagination, class: "testing" %>
     </div>
     <div class='card-container'>
       
-        <%@events.each do |event| %>   
+        <% @past_pagination.each do |event| %>   
          <div class='event-card'>
-            <h4 class="title"><%= link_to "#{event.title}", event_path(event), class: "event-title" %></h4>
+            <h4 class="title"><%= event.title %></h4>
             <p><%= event.description %></p>
             <p>Location: <%= event.address %></p>
            <p> Date: <%= event.date %></p>
            <p>Organised by: <%= event.creator.username %></p>
-           <%= event.id %>
          </div>
       <% end %>
         <% else %>
@@ -22,6 +21,3 @@
       <% end %>
     </div>
 </div>
-  <div class="pagination justify-content-center m-3">
-      <%= will_paginate @events, class: "testing" %>
-    </div>

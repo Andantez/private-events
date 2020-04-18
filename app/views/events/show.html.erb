@@ -1,9 +1,13 @@
-<h1>show</h1>
-<ul>
-<li><%= @event.description %></li>
-<li><%= @event.title %></li>
-<li><%= @event.address %></li>
-<li><%= @event.date %></li>
-</ul>
-
-<%= @event.attendees %>
+<div class="show-list-container">
+  
+  <ul class="show-list">
+  <li class="show-list-item show-title"><%= @event.title %></li>
+  <li><%= @event.description %></li>
+  <li>Location: <%= @event.address %></li>
+  <li>Date: <%= @event.date %></li>
+  </ul>
+  
+  <% @event.attendees.each do |attendee| %>
+   <p class='show-list'> Attendees: <%= attendee.username %></p>
+  <% end %>
+</div>

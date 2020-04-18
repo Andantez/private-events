@@ -1,8 +1,19 @@
-<h1>Log in</h1>
-<%= form_for(:session, url: login_path) do |f| %>
-<%= f.label :email %>
-<%= f.email_field :email %>
-<%= f.label :password %>
-<%= f.password_field :password %>
-<%= f.submit "Log in" %>
-<% end %>
+    <%= provide(:title, 'Log in') %>
+<div class="log-in-container">
+ <div class="log-in-form">
+    <h1 class="header">Log in</h1>
+    <%= form_for(:session, url: login_path) do |f| %>
+    <div class="form-container">
+      <div>
+        <%= f.label :email ,class: 'log-in-label'%>
+      </div>
+        <div><%= f.email_field :email ,class: 'log-in-input'%></div>
+     <div>
+        <%= f.label :password, class: 'log-in-label' %>
+     </div>
+        <div><%= f.password_field :password, class: 'log-in-input' %></div>
+      <div class="button"><%= f.submit "Log in", class: 'log-in-btn' %></div>
+    </div>
+    <% end %>
+ </div->
+</div>

@@ -1,3 +1,77 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@import "fonts";
+
+.log-in-container {
+  // width: 500px;
+  // margin: 0px auto;
+  // text-align: center;
+}
+
+.log-in-form {
+
+}
+
+.header {
+  text-align: center;
+  color: #263950;
+  font-family: $title-font;
+}
+
+.log-in-input {
+  // border: 3px solid black;
+}
+
+.form-container {
+  width: 400px;
+  margin: 0px auto;
+}
+.log-in-input {
+  width: 100%;
+  height: 2rem;
+  border: 2px solid #263950;
+  &:focus {
+    border-color: #263950;
+  }
+  
+}
+
+.log-in-container {
+  background-color: #F1F2EE;
+  color: #263950;
+}
+
+.log-in-label {
+  color: #263950;
+  font-weight: bold;
+  font-family: $text-font;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+
+.log-in-btn {
+  font-family: $text-font;
+  font-size: 1.4rem;
+  padding: 5px 30px;
+  border: 2px solid;
+  border-radius: 20px;
+  color: #263950;
+  background-color: #f1f2ee;
+  &:hover {
+    border-left: 3px solid #263950;
+  border-right: 3px solid #263950;
+  border-top-left-radius: 30%;
+  border-top-right-radius: 30%;
+  border-bottom-left-radius: 30%;
+  border-bottom-right-radius: 30%;
+  color: #263950;
+  background-color: #f1f2ee;
+  font-weight: bold;
+  }
+}
+
+.button {
+  text-align: center;
+  margin-top: 30px;
+}
